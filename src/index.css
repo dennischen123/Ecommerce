@@ -1,13 +1,154 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+
+/* Nav Styles */
+
+nav,
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    height: 8vh;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    margin-left: 10px;
+    color: black;
+}
+
+
+/* Banner */
+
+.Banner img {
+    /* height: 20vh; */
+    width: 100%;
+    height: 18vh;
+    object-fit: cover;
+}
+
+
+/* Info Tab */
+
+.InfoTab {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    border-bottom: solid gray 2px;
+    padding-bottom: 15px;
+}
+
+.InfoTab .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.InfoTab .info p {
+    margin-left: 20px;
+}
+
+
+/* submenu Container Styles*/
+
+.SubMenuContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+    margin: 0 15%;
+    flex-wrap: wrap;
+}
+
+.submenu-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.MenuItem {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 170px;
+    background-size: cover;
+    align-items: flex-start;
+    justify-content: flex-end;
+    margin: 5px 10px;
+    margin-bottom: 10px;
+    /* cursor: pointer; */
+}
+
+.MenuItem h5 {
+    background-color: white;
+    /* position: relative; */
+    margin-left: 5px;
+    margin-bottom: 5px;
+    padding: 2 5px;
+    z-index: 0;
+    /* cursor: pointer; */
+}
+
+.MenuItem img {
+    opacity: 90%;
+    width: 450px;
+    height: 170px;
+    position: absolute;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.MenuItem img:hover {
+    opacity: 100%;
+    width: 455px;
+    height: 175px;
+    /* cursor: pointer; */
+}
+
+
+/* Shopping Cart Styles */
+
+.Cart {
+    margin: auto auto;
+    /* display: flex; */
+    /* justify-content: center; */
+    width: 500px;
+    height: 80vh;
+    background-color: snow;
+}
+
+@media only screen and (max-width: 600px) {
+    .SubMenuContainer {
+        margin: 0 -3%;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .SubMenuContainer {
+        margin: 0 5%;
+    }
+}
+
+@media only screen and (min-width: 1750px) {
+    .SubMenuContainer {
+        margin: 0 15%;
+    }
 }

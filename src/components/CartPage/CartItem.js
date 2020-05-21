@@ -16,7 +16,7 @@ export default function CartItem(props) {
             console.log('total price = ' + props.totalPrice);
             console.log('item price = ' + props.item.price);
             console.log('total + item = ' + (Number(props.totalPrice) + Number(props.item.price)));
-            props.setTotalPrice(Number.parseFloat(props.totalPrice + Number(props.item.price)));
+            props.setTotalPrice(Number.parseFloat((props.totalPrice + Number(props.item.price)).toFixed(2)));
 
     }
     useEffect(() => {

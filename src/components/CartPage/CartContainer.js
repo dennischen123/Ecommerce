@@ -11,7 +11,7 @@ export default function CartContainer(props) {
     }
 	const [totalItem, setTotalItem] = useState(cart.length);
 	const [totalPrice, setTotalPrice] = useState(getTotal(cart));
-    const mapItems = cart.map((item, index) => <CartItem key={index} item={item} setTotalItem={setTotalItem} totalPrice={totalPrice} setTotalPrice={setTotalPrice} />)
+    const mapItems = cart.map((item, index) => <CartItem key={index} item={item} setTotalItem={setTotalItem} totalPrice={totalPrice} setTotalPrice={setTotalPrice}/>)
     // const mapItems = cart.map((item, index) => <CartItem key={index} item={item}/>)
     return (
         <div className="CartContainer container">
@@ -22,7 +22,7 @@ export default function CartContainer(props) {
           <div className="cart-total row">
 				<p className="col-7"></p>
 				<h5 className="col-3">{cart.length}</h5>
-				<h5 className="col-2">Total: ${cartTotal}</h5>
+				<h5 className="col-2">Total:${totalPrice}</h5>
           </div>
 		  <button className="text-right">Order</button>
         </div>

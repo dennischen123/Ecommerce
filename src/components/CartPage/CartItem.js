@@ -4,7 +4,7 @@ import { CartContext } from './../../context/CartContext'
 export default function CartItem(props) {
     const [counter, setCounter] = useState(props.item.qty);
     const [total, setTotal] = useState(Number(props.item.price));
-    const { cart, cartTotal, removeProduct} = useContext(CartContext);
+    const {cart, cartTotal, removeProduct} = useContext(CartContext);
     const handleDecrement = () => {
         if (counter > 0){
             setCounter(counter - 1);
@@ -12,13 +12,21 @@ export default function CartItem(props) {
         }
     }
     const handleIncrement = () => {
-        props.setTotalPrice(Number.parseFloat(props.totalPrice + Number(props.item.price)).toFixed(2));
-        setCounter(counter + 1);
+            setCounter(counter + 1);
+            console.log('total price = ' + props.totalPrice);
+            console.log('item price = ' + props.item.price);
+            console.log('total + item = ' + (Number(props.totalPrice) + Number(props.item.price)));
+            props.setTotalPrice(Number.parseFloat(props.totalPrice + Number(props.item.price)));
+
     }
     useEffect(() => {
         setTotal(Number.parseFloat(props.item.price * counter).toFixed(2));
         // setTotal(Number.parseFloat(props.item.price).toFixed(2));
     })
+
+    useEffect(() => {
+        console.log('total price updated');
+    }, [props.totalPrice])
     return (
         <div className="CartItem border-bottom mb-2 row">
             <div className="col-3">

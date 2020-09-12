@@ -8,7 +8,7 @@ export default (state, action) => {
         case 'Remove_Product':
             return {
                 ...state,
-                cart: state.cart.filter(item => item.id !== action.payload)
+                cart: state.cart.filter(item => item.id !== action.payload.id)
             }
         case 'Update_Cart_Total':
             return {

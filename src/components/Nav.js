@@ -1,17 +1,26 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { CartContext } from './../context/CartContext';
+import {Button} from '@material-ui/core';
 
 function Nav() {
-    const { cart, restaurant } = useContext(CartContext);
+    const {store, dispatch } = useContext(CartContext);
     return (
         <nav className="sticky-top bg-white">
-            <div>{restaurant.info.name}</div>
-            <ul className="nav-links">
-                <Link to="/">Menu</Link>
-                <Link to="/login">Login</Link>
-                <Link to="/signup">Sign Up</Link>
-                <Link to="/cart">Cart({cart.length})</Link>
+            <div>{store.restaurant.info.name}</div>
+            <ul>
+                <Link to='/'>
+                    <Button>Menu</Button>
+                </Link>
+                <Link to='/login'>
+                    <Button>Login</Button>
+                </Link>
+                <Link to='/registration'>
+                    <Button>Sign Up</Button>
+                </Link>
+                <Link to='/cart'>
+                    <Button>Cart({store.cart.length})</Button>
+                </Link>
             </ul>
         </nav>
     );

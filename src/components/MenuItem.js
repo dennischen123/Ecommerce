@@ -1,14 +1,10 @@
 import React,{ useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from '../context/CartContext';
 export default function MenuItem(props) {
-    const { addProduct, cart, updateCartTotal, cartTotal } = useContext(CartContext);
-    console.log(cartTotal);
+    const {store, dispatch} = useContext(CartContext);
     const handleAddProduct = () => {
-        // console.log(cartTotal);
-        updateCartTotal(Number(props.item.price));
-        addProduct(props.item);
-        // console.log(props.item.price);
-        // console.log(cartTotal);
+        // updateCartTotal(Number(props.item.price));
+        dispatch({type: 'Add_Product', payload: props.item});
     }
     return (
         <div>
